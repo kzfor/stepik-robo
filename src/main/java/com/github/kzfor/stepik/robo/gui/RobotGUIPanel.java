@@ -34,7 +34,7 @@ public class RobotGUIPanel extends JPanel {
         random = new Random();
         canMove = true;
         setPreferredSize(new Dimension(SQUARE_SIDE, SQUARE_SIDE));
-        robotDirection = Direction.RIGHT;
+        robotDirection = Direction.values()[random.nextInt(3)];
         runRobot();
     }
 
@@ -112,8 +112,8 @@ public class RobotGUIPanel extends JPanel {
     }
 
     private void setUpPointCoordinates() {
-        pointX = random.nextInt((int) (SQUARE_SIDE / UNIT_SIZE)) * UNIT_SIZE;
-        pointY = random.nextInt((int) (SQUARE_SIDE / UNIT_SIZE)) * UNIT_SIZE;
+        pointX = random.nextInt(SQUARE_SIDE / UNIT_SIZE) * UNIT_SIZE;
+        pointY = random.nextInt(SQUARE_SIDE / UNIT_SIZE) * UNIT_SIZE;
     }
 
     private void setUpRobotCoordinates() {
